@@ -217,7 +217,7 @@ The blog generator uses [OpenRouter](https://openrouter.ai) to call Anthropic's 
 |-------|-------------|
 | API key | `OPENROUTER_API_KEY` |
 
-**Note:** OpenRouter offers free credits for new accounts. The blog generator uses `anthropic/claude-sonnet-4-20250514` — check [OpenRouter pricing](https://openrouter.ai/models) for current costs.
+**Note:** OpenRouter offers free credits for new accounts. The blog generator uses `anthropic/claude-sonnet-5.5` — check [OpenRouter pricing](https://openrouter.ai/models) for current costs.
 
 ### Stripe API Keys
 
