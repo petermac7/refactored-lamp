@@ -1,0 +1,246 @@
+/* Visual builder chrome: tabs, header buttons, templates dialog. */
+
+.sfb-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.sfb-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--puck-color-white, #fff);
+  border-bottom: 1px solid var(--puck-color-grey-09, #dcdcdc);
+}
+
+.sfb-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 4px 10px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--puck-color-grey-05, #767676);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sfb-tab:hover {
+  color: var(--puck-color-grey-02, #292929);
+  background: var(--puck-color-grey-12, #fafafa);
+}
+
+.sfb-tab[aria-selected='true'] {
+  border-bottom-color: var(--puck-color-azure-04, #5a5ad9);
+  color: var(--puck-color-azure-04, #5a5ad9);
+}
+
+.sfb-tabpanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.sfb-field {
+  padding: 16px;
+  border-bottom: 1px solid var(--puck-color-grey-10, #e8e8e8);
+}
+
+.sfb-hint {
+  margin: 0;
+  padding: 20px 16px;
+  color: var(--puck-color-grey-05, #767676);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sfb-color {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sfb-color input[type='color'] {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  padding: 2px;
+  border: 1px solid var(--puck-color-grey-09, #dcdcdc);
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.sfb-color input[type='text'] {
+  min-width: 0;
+  flex: 1;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--puck-color-grey-09, #dcdcdc);
+  border-radius: 4px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+}
+
+.sfb-color button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sfb-color button:hover {
+  background: var(--puck-color-grey-11, #f0f0f0);
+}
+
+.sfb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--puck-color-grey-09, #dcdcdc);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--puck-color-grey-02, #292929);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.sfb-btn:hover {
+  background: var(--puck-color-grey-11, #f0f0f0);
+}
+
+.sfb-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.sfb-btn--primary {
+  border-color: var(--puck-color-azure-04, #5a5ad9);
+  background: var(--puck-color-azure-04, #5a5ad9);
+  color: #fff;
+}
+
+.sfb-btn--primary:hover {
+  background: var(--puck-color-azure-03, #4646c8);
+}
+
+.sfb-btn--danger {
+  border-color: #c0392b;
+  background: #c0392b;
+  color: #fff;
+}
+
+.sfb-btn--danger:hover {
+  background: #a93226;
+}
+
+.sfb-status {
+  max-width: 22rem;
+  overflow: hidden;
+  color: var(--puck-color-grey-05, #767676);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sfb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 45%);
+}
+
+.sfb-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(60rem, 100%);
+  max-height: min(44rem, 100%);
+  border-radius: 8px;
+  background: #fff;
+  color: #1f1f1f;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 30%);
+}
+
+.sfb-dialog > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.sfb-dialog h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.sfb-dialog header p {
+  margin: 4px 0 0;
+  color: #767676;
+  font-size: 14px;
+}
+
+.sfb-templates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 16px;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.sfb-templates article {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.sfb-templates h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sfb-templates p {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.sfb-templates small {
+  color: #767676;
+  font-size: 12px;
+}
+
+.sfb-templates footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+}

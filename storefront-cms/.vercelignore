@@ -1,0 +1,12 @@
+# Never upload local secrets, the local database or local uploads
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+public/media
+node_modules
+.next
+tests
+test-results
+playwright-report
